@@ -13,6 +13,21 @@
     <link href="styles/contact.css" rel="stylesheet" />
     <link href="styles/footer.css" rel="stylesheet" />
     <title>Portfolio</title>
+    <script>
+        // Toggle Function
+       const toggleNavigation = () => {
+          const navList = document.getElementById('nav_list_mobile');
+          const toggleImage = document.getElementById('toggle_image');
+          if(navList.style.display !== 'flex') {
+              navList.style.display = 'flex';
+              navList.style.flexDirection = 'column';
+              toggleImage.src = 'images/cross.svg';
+          } else {
+            navList.style.display = 'none';
+            toggleImage.src = 'images/hamburger.svg';
+          }
+        }
+    </script>
 </head>
 
 <body>
@@ -139,6 +154,25 @@
     </div>
 </div>
     </main>
+    <!-- Mobile Navigation Items -->
+    <ul id="nav_list_mobile" class="nav_List_items_mobile">
+        <li>
+            <a href="#about">About</a>
+        </li>
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+    </ul>
+    <!-- Hamburger Menu -->
+    <div class="toggle gradient" onclick="toggleNavigation()">
+        <img id="toggle_image" src="images/hamburger.svg" height="30" width="30" />
+    </div>
     <footer class="footer_container gradient">
         <p>&copy 2022 Designed and Developed by Your Name</p>
     </footer>
